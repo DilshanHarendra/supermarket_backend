@@ -10,7 +10,7 @@ class LeavesController extends Controller
     //
     public function __construct()
     {
-       
+
     }
     public function index(){
         return response()->json(['status'=>'ok'],200);

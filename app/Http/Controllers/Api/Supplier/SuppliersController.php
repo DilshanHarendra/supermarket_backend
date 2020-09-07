@@ -9,6 +9,11 @@ use Illuminate\Routing\Controller;
 class SuppliersController extends Controller
 {
     //
+    function __construct()
+    {
+        
+    }
+
     function getAll(){
         $data=Supplier::getAll();
         return response(['data'=>$data],200);
