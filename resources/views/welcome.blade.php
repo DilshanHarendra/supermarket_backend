@@ -94,6 +94,12 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+
+                <form action="" method="post">
+                    <input type="text" name="supplier_name">
+                    <button name="submit">submit</button>
+                </form>
             </div>
         </div>
     </body>

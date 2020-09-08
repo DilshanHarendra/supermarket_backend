@@ -18,7 +18,7 @@ class CreateSuppliersTable extends Migration
             $table->string('supplier_name',50)->nullable(false);
             $table ->string('contact',50)->nullable(false);
             $table->string('email',50)->nullable(false);
-            $table->date('join_table')->nullable(false);
+            $table->date('join_date')->nullable(false);
             $table->timestamps();
         });
     }

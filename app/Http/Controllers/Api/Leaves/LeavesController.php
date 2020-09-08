@@ -30,8 +30,22 @@ class LeavesController extends Controller
 
     // get by empID
     public function getByType($type){
-        $data=Leaves::getLeavesByType('t1');
+        $data=Leaves::getLeavesByType($type);
         return response()->json(['data'=>$data],200);
+    }
+    public function applayNewLeave(Request $request){
+        try {
+            $leave = new Leaves();
+            $leave->leave_id=uniqid('Le');
+            $leave->type=$request->type;
+            $leave->details=$request->details;
+            $leave->emp_id=$request->emp_id;
+            $leave->save();
+            return response(['data'=>$leave],200);
+        }catch (Exception $e){
+            return response(['data'=>$e],422);
+        }
+
     }
 
 
