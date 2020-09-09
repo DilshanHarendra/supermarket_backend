@@ -34,7 +34,7 @@ class OverheadExpensesController extends Controller
 
             $oExpense->oh_id=uniqid('oE');
             $oExpense->expense=$request->expense;
-            $oExpense->amount=$request->amount;
+            $oExpense->amount=(float)$request->amount;
             $oExpense->paymentMode=$request->paymentMode;
             $oExpense->payDate=$request->payDate;
 

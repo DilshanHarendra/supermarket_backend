@@ -18,7 +18,7 @@ class CreateOverheadExpensesTable extends Migration
             $table->string('expense',50)->nullable(false);
             $table ->double('amount')->nullable(false);
             $table->string('paymentMode',20)->nullable(false);
-            $table->date('payDate')->nullable(false);
+            $table->string('payDate',20)->nullable(false);
             $table->timestamps();
         });
     }

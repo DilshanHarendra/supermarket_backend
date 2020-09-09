@@ -18,7 +18,7 @@ class CreateEmployeesTable extends Migration
             $table->string('username',50);
             $table ->string('password',50);
             $table->string('gender',20);
-            $table->date('dob');
+            $table->string('dob',20);
             $table ->string('nic',50);
             $table->string('address',20);
             $table->string('job_role',50);

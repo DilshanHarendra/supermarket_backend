@@ -15,10 +15,11 @@ class CreateOfferDetailsTable extends Migration
     {
         Schema::create('offer_details', function (Blueprint $table) {
             $table->string('offer_id',50)->primary();
-            $table->date('start_date',50);
-            $table ->date('end_date');
+            $table->string('img',100);
+            $table->string('start_date',20);
+            $table ->string('end_date',20);
             $table->string('details',20);
-            $table->date('batch_id');
+            $table->string('batch_id',20);
             $table->string('brand_id',20);
             $table->timestamps();
         });

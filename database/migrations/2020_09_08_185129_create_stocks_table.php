@@ -16,9 +16,9 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->string('pro_id',50)->primary();
             $table->string('proName',50);
-            $table ->string('proPrice',50);
+            $table ->double('proPrice');
             $table->string('proDetails',20);
-            $table->string('img');
+            $table->string('img',100);
             $table->timestamps();
         });
     }

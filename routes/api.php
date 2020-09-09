@@ -57,7 +57,7 @@ Route::group(['prefix'=>'v1','namespace'=>'Api'],function (){
     });
 
     Route::group(['prefix'=>'expense','namespace'=>'OverheadExpenses'],function (){
-        //localhost:3000/api/v1/supplier
+        //localhost:3000/api/v1/expense
         Route::get('/','OverheadExpensesController@getAll');
         Route::post('/','OverheadExpensesController@addNewExpense');
         /*
@@ -83,6 +83,7 @@ Route::group(['prefix'=>'v1','namespace'=>'Api'],function (){
             details::"details",
     		batch_id:"cash",
     		brand_id:"cash",
+            img:'image'
            }
          * */
     });
@@ -142,7 +143,7 @@ Route::group(['prefix'=>'v1','namespace'=>'Api'],function (){
     });
 
     Route::group(['prefix'=>'orders','namespace'=>'Order'],function (){
-        //localhost:3000/api/v1/employee
+        //localhost:3000/api/v1/orders
         Route::get('/','OrdersController@getAll');
         Route::get('/{id}','OrdersController@getById');
         Route::post('/','OrdersController@addNewOrder');

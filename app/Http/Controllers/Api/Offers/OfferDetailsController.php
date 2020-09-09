@@ -34,6 +34,12 @@ class OfferDetailsController extends Controller
             $offerDetails->details=$request->details;
             $offerDetails->batch_id=$request->batch_id;
             $offerDetails->brand_id=$request->brand_id;
+            $file=$request->file('img');
+            $path='img/offer';
+            $offerDetails->img=$path;
+
+                $file->move($path,$file->getClientOriginalName());
+
 
             $offerDetails->save();
             return response(['data'=>$offerDetails],200);
