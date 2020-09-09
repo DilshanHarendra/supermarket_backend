@@ -128,6 +128,7 @@ Route::group(['prefix'=>'v1','namespace'=>'Api'],function (){
     Route::group(['prefix'=>'employee','namespace'=>'Employees'],function (){
         //localhost:3000/api/v1/employee
         Route::get('/','EmployeeController@getAll');
+        Route::get('/{id}','EmployeeController@getById');
         Route::post('/','EmployeeController@addNewEmployee');
         /*
          *sample
