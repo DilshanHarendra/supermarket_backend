@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Order;
 
+use App\Employee;
 use App\Orders;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -46,14 +47,21 @@ class OrdersController extends Controller
         try {
 
             $id=$request->order_id;
+            $eid=$request->delivery_Person_id;
+            $ename=$request->username;
             $data=array(
-                "delivery_Person_id"=>$request->delivery_Person_id,
+                "delivery_Person_id"=>$ename,
                 "delivered"=>"Progress"
 
             );
 
-            $order=Orders::updatData($id,$data);
-            return response(['data'=>$order],200);
+            $data2=array(
+                "assignDelivery"=>$id,
+            );
+
+            Employee::assignToDelevery($eid,$data2);
+            Orders::updatData($id,$data);
+            return response(['data'=>"succ"],200);
 
         }catch (Exception $e){
             return response(['data'=>$e],422);

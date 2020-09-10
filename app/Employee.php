@@ -13,4 +13,8 @@ class Employee extends Model
     public static function getById($id){
         return DB::table('employees')->where('user_id',$id)->get();
     }
+    public static function assignToDelevery($id,$data){
+        return DB::table('employees')->where('user_id',$id)->update($data);
+
+    }
 }
