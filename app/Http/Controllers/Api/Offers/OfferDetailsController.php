@@ -34,11 +34,11 @@ class OfferDetailsController extends Controller
             $offerDetails->details=$request->details;
             $offerDetails->batch_id=$request->batch_id;
             $offerDetails->brand_id=$request->brand_id;
-            $file=$request->file('img');
-            $path='img/offer';
-            $offerDetails->img=$path;
 
-                $file->move($path,$file->getClientOriginalName());
+
+
+            $path='img/offer/'.$request->img;
+           $offerDetails->img=$path;
 
 
             $offerDetails->save();
@@ -50,6 +50,19 @@ class OfferDetailsController extends Controller
 
 
     }
+    public function addImage(Request $request){
+        try {
 
+
+            $file=$request->file('img');
+            $path='img/offer';
+            $file->move($path,$file->getClientOriginalName());
+
+            // file_put_contents($path, $file->getPath());
+            return response(['data'=>'succ'],200);
+        }catch (Exception $e){
+            return response(['data'=>$e],422);
+        }
+    }
 
 }

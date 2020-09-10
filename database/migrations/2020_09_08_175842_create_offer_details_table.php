@@ -15,7 +15,7 @@ class CreateOfferDetailsTable extends Migration
     {
         Schema::create('offer_details', function (Blueprint $table) {
             $table->string('offer_id',50)->primary();
-            $table->string('img',100);
+            $table->string('img',100)->default("no");
             $table->string('start_date',20);
             $table ->string('end_date',20);
             $table->string('details',20);

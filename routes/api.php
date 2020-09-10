@@ -75,6 +75,7 @@ Route::group(['prefix'=>'v1','namespace'=>'Api'],function (){
         //localhost:3000/api/v1/offers
         Route::get('/','OfferDetailsController@getAll');
         Route::post('/','OfferDetailsController@addNewOffer');
+        Route::post('/image','OfferDetailsController@addImage');
         /*
          *sample
          {
@@ -113,6 +114,7 @@ Route::group(['prefix'=>'v1','namespace'=>'Api'],function (){
         //localhost:3000/api/v1/stock
         Route::get('/','StockController@getAll');
         Route::post('/','StockController@addNewStock');
+        Route::post('/image','StockController@addImage');
         /*
          *sample
          {

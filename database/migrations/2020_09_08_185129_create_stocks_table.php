@@ -18,7 +18,7 @@ class CreateStocksTable extends Migration
             $table->string('proName',50);
             $table ->double('proPrice');
             $table->string('proDetails',20);
-            $table->string('img',100);
+            $table->string('img',100)->default("no");
             $table->timestamps();
         });
     }
